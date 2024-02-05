@@ -5,7 +5,7 @@ def get_next_word_probability(sentence, next_word):
 
     tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
 
- 
+    #encoding words
     inputs = tokenizer.encode(sentence, return_tensors='pt')
 
 
@@ -31,6 +31,16 @@ def get_next_word_probability(sentence, next_word):
 
 
 sentence = "The quick brown fox jumps"
-next_word = "over"
-probability = get_next_word_probability(sentence, next_word)
-print(f"Probability of '{next_word}' being the next word: {probability}")
+
+liste = []
+iterated = sentence.split()
+for i, word in enumerate(iterated):
+    if i == 0:
+        continue
+    liste.append(get_next_word_probability(" ".join(iterated[:i]),word))
+
+
+
+print(liste)
+
+print(sum(liste)/len(liste))
