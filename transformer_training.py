@@ -30,7 +30,7 @@ def get_next_word_probability(sentence, next_word):
     return next_word_probability
 
 
-sentence = "The quick brown fox jumps"
+sentence = "We must not be confused about what freedom is. Basic human rights are simple and easily understood"
 
 liste = []
 iterated = sentence.split()
