@@ -30,7 +30,7 @@ def get_next_word_probability(sentence, next_word):
     return next_word_probability
 
 
-sentence = " In my position I have now, about half of my time is devoted to counseling and registration and other issues like that. About thirty to forty percent of my time is involved with teaching, doing preparation, helping out in the labs, and helping students. About five to ten percent of my time is spent being involved in academic committees and working with administrative items."
+sentence = " Supreme Court has said that a defendant 's lawyer may take the position that the law requires."
 
 liste = []
 iterated = sentence.split()
