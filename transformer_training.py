@@ -4,13 +4,13 @@ from transformers import GPT2Tokenizer, GPT2LMHeadModel
 def get_next_word_probability(sentence, next_word):
     tokenizer = GPT2Tokenizer.from_pretrained('gpt2')
 
-    # Encoding words
+    # words are encoded here
     inputs = tokenizer.encode(sentence, return_tensors='pt')
 
     model = GPT2LMHeadModel.from_pretrained('gpt2')
     model.eval()  
 
-    # Predict all tokens
+    # tokens are predicted here
     with torch.no_grad():
         outputs = model(inputs, labels=inputs)
     logits = outputs.logits
@@ -23,7 +23,7 @@ def get_next_word_probability(sentence, next_word):
 
     return next_word_probability
 
-# Function to process a list of sentences
+# sentences from the file are processed here
 def process_sentences(input_file, output_file):
     with open(input_file, 'r') as f:
         sentences = f.readlines()
@@ -41,7 +41,7 @@ def process_sentences(input_file, output_file):
             f_out.write(f'"{sentence}","{liste}","{avg_probability}"\n')
 
 # Define input and output file paths
-input_file = '/Users/zoe/Documents/GitHub/zoematr/Reverse_Transformer/data/testsentences.txt'
+input_file = '/Users/zoe/Documents/GitHub/zoematr/Reverse_Transformer/data/testsentences_ai.txt'
 output_file = '/Users/zoe/Documents/GitHub/zoematr/Reverse_Transformer/data/testsentences_result.txt'
 
 # Process sentences and write results to the output file
