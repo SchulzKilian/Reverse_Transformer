@@ -389,8 +389,9 @@ prompts = [
     "A world where humans have the ability to teleport: "
 ]
 
-def generate_sentence(prompt, min_words=15, max_words=25):
+def generate_sentence(prompt, min_words=20, max_words=50):
     input_ids = tokenizer.encode(prompt, return_tensors='pt')
+    num_tokens_in_prompt = input_ids.shape[1]
 
     # Generate a sequence of tokens
     output_sequences = model.generate(
@@ -398,17 +399,18 @@ def generate_sentence(prompt, min_words=15, max_words=25):
     max_length=50,
     temperature=0.6, 
     top_k=40, 
-    top_p=0.9,        
+    top_p=0.9,  
+    do_sample=True,       
     num_return_sequences=1
 )
     
-    text = tokenizer.decode(output_sequences[0], skip_special_tokens=True)
+    generated_text = tokenizer.decode(output_sequences[0][num_tokens_in_prompt:], skip_special_tokens=True)
 
-
-    words = text.split()
+    words = generated_text.split()
     if len(words) > max_words:
         words = words[:max_words]
     elif len(words) < min_words:
+        print("too short")
         return None  # Skip if the sentence is too short
 
     return ' '.join(words)
@@ -416,7 +418,7 @@ import random
 output_file = "AI_sentences.txt"
 with open(output_file, 'w') as file:
     for prompt in prompts:
-        sentence = generate_sentence(prompt+" in about 25 words")
+        sentence = generate_sentence(prompt+" in about 40 words")
         if sentence:
             file.write(sentence + '\n')
 
