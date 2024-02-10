@@ -30,7 +30,7 @@ def get_next_word_probability(sentence, next_word):
     return next_word_probability
 
 
-sentence = " Supreme Court has said that a defendant 's lawyer may take the position that the law requires."
+sentence = " A new poll from the Pew Research Center for the People & the Press finds that a majority of people in the U. S. believe in UFOs."
 
 liste = []
 iterated = sentence.split()
