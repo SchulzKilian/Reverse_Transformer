@@ -50,7 +50,7 @@ process_sentences(input_file, output_file)
 ai_sentence = "According to a government official who spoke to CNN on condition of anonymity, a transgender woman who was born a woman had this option when a caretaker at a newborn nursery in Texas."
 human_sentence = """The sky here is American like the blue of your eyes;
 the folds of your eyelids the Hindu Kush mountain. The rich vein of the Hindu Kush only a stony ridge cutting across the parched soil of Afghanistan"""
-
+"""
 
 def get_average_probability(sentence):
     liste = []
@@ -60,6 +60,6 @@ def get_average_probability(sentence):
             continue
         liste.append(get_next_word_probability(" ".join(iterated[:i]),word))
     return sum(liste)/len(liste)
-
-print("AI probability: " +str(get_average_probability(ai_sentence)))
-print("Human probability: " +str(get_average_probability(human_sentence)))
+"""
+#print("AI probability: " +str(get_average_probability(ai_sentence)))
+#print("Human probability: " +str(get_average_probability(human_sentence)))
