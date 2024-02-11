@@ -41,8 +41,8 @@ def process_sentences(input_file, output_file):
             f_out.write(f'"{sentence}","{liste}","{avg_probability}"\n')
 
 # Define input and output file paths
-input_file = '/Users/zoe/Documents/GitHub/zoematr/Reverse_Transformer/AI_sentences.txt'
-output_file = '/Users/zoe/Documents/GitHub/zoematr/Reverse_Transformer/data/testsentences_result.txt'
+input_file = '/Users/zoe/Documents/GitHub/zoematr/Reverse_Transformer/data/HU_sentences.txt'
+output_file = '/Users/zoe/Documents/GitHub/zoematr/Reverse_Transformer/data/HU_sentences_results.txt'
 
 # Process sentences and write results to the output file
 process_sentences(input_file, output_file)

@@ -13,7 +13,7 @@ from nltk.corpus import gutenberg
 sentences = gutenberg.sents()
 
 # Filter sentences based on length
-filtered_sentences = [sent for sent in sentences if 20 <= len(sent) <= 40]
+filtered_sentences = [sent for sent in sentences if 20 <= len(sent) <= 50]
 
 # Shuffle the sentences
 random.shuffle(filtered_sentences)
