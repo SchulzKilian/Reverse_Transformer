@@ -1,3 +1,8 @@
+
+
+
+
+
 def get_data():
     filename = "data/HU_sentences_results.txt"
     humanamount = 0
@@ -33,8 +38,11 @@ def get_data():
             ailist.append(liste)
 
     
-    print("AI average is " + str(aisum/aiamount))
-    print("Human average is " + str(humansum/humanamount))
+#    print("this is the human list ")
+#    print(humanlist)    
+    return humanlist, ailist
+#   print("this is the ai list ")
+#   print(ailist)
 
 
 get_data()
