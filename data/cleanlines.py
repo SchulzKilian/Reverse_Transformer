@@ -1,4 +1,4 @@
-with open("/Users/zoe/Documents/GitHub/zoematr/Reverse_Transformer/data/HU_sentences.txt", "r") as input_file, open("/Users/zoe/Documents/GitHub/zoematr/Reverse_Transformer/data/clean.txt", "w") as output_file:
+with open("data/HU_sentences.txt", "r") as input_file, open("data/clean.txt", "w") as output_file:
     # Iterate over each line in the input file
     for line in input_file:
         # Remove unwanted characters (numbers, commas, and colons)
