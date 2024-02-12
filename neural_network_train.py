@@ -25,7 +25,8 @@ from torch.utils.data import TensorDataset, DataLoader
 
 batch_size = 32
 epochs = 10
-
+X_train = ""
+Y_train =""
 # terning datasets to tensors
 train_dataset = TensorDataset(X_train, Y_train)
 train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
@@ -52,3 +53,4 @@ for epoch in range(epochs):
 
     epoch_loss = running_loss / len(train_loader.dataset)
     print(f'Epoch {epoch+1}/{epochs} Loss: {epoch_loss:.4f}')
+    
