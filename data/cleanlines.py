@@ -1,3 +1,5 @@
+#JUST A FUNCTION TO CLEAN THE DATA
+
 with open("data/HU_sentences.txt", "r") as input_file, open("data/clean.txt", "w") as output_file:
     # Iterate over each line in the input file
     for line in input_file:
