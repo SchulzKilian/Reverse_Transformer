@@ -31,6 +31,7 @@ def get_data():
             liste =[]
             x = sentence.find("[")
             y = sentence.find("]")
+            new = sentence[x+1:y]
 
             for item in new.split(","):
                 aisum += float(item)
@@ -38,26 +39,24 @@ def get_data():
                 liste.append(float(item))
 
             ailist.append(liste)
-    ai = 0
+
     for liste in ailist:
         länge = len(liste)
         for i in range(maxx-länge):
-            ai +=länge
+
             liste.append(0.0)
         assert len(liste) == 50
-    human = 0
+
     for liste in humanlist:
         länge = len(liste)
         for i in range(maxx-länge):
-            human+=länge
             liste.append(0.0)
 
-        assert len(liste) == 50
+        if len(liste) > 50:
+            print(len(liste))
 
 
-    
-#    print("this is the human list ")
-#    print(humanlist)    
+
     return humanlist, ailist
 #   print("this is the ai list ")
 #   print(ailist)

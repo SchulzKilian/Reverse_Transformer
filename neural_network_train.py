@@ -101,7 +101,6 @@ with torch.no_grad():  # No need to track gradients during evaluation
     for features, labels in test_loader:
         outputs = model(features)
         predicted_labels = (outputs > 0.5).float()  # Convert to binary labels (0 or 1)
-        print(outputs)
         actuals.extend(labels.view(-1).tolist())
         predictions.extend(predicted_labels.view(-1).tolist())
 
